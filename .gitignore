@@ -1,0 +1,22 @@
+# Logs
+*.log
+bin/
+obj/
+.vs/
+.idea/
+.vscode/
+.next/
+node_modules/
+coverage/
+test-results/
+playwright-report/
+blob-report/
+*.user
+.env
+.env.local
+frontend/.next
+frontend/node_modules
+backend/**/bin
+backend/**/obj
+.DS_Store
+*.tsbuildinfo
