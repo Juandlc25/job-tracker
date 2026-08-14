@@ -1,0 +1,13 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <ItemGroup>
+    <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.11.0" />
+    <PackageReference Include="MediatR" Version="12.4.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\BuildingBlocks\JobTracker.SharedKernel\JobTracker.SharedKernel.csproj" />
+    <ProjectReference Include="..\JobTracker.Modules.Jobs.Domain\JobTracker.Modules.Jobs.Domain.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <InternalsVisibleTo Include="JobTracker.Modules.Jobs.UnitTests" />
+  </ItemGroup>
+</Project>
