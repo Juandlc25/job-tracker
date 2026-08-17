@@ -1,6 +1,8 @@
 using System.Threading.RateLimiting;
 using Hangfire;
+using Hangfire.Dashboard;
 using Hangfire.PostgreSql;
+using JobTracker.Api.HangfireAuth;
 using JobTracker.Api.Endpoints;
 using JobTracker.Api.Middleware;
 using JobTracker.Api.Persistence;
@@ -73,7 +75,10 @@ app.UseMiddleware<TenantMiddleware>();
 
 app.MapGet("/health", () => Results.Ok(new { status = "ok" }));
 app.MapJobsEndpoints();
-app.MapHangfireDashboard("/hangfire");
+app.MapHangfireDashboard("/hangfire", new DashboardOptions
+{
+    Authorization = [new HangfireDashboardAuthorizationFilter()],
+});
 
 using (var scope = app.Services.CreateScope())
 {
