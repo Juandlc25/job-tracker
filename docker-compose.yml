@@ -18,8 +18,8 @@ services:
 
   backend:
     build:
-      context: ./backend
-      dockerfile: Dockerfile
+      context: .
+      dockerfile: backend/Dockerfile
     environment:
       ASPNETCORE_URLS: http://+:5080
       ConnectionStrings__Database: Host=postgres;Port=5432;Database=jobtracker;Username=jobtracker;Password=jobtracker

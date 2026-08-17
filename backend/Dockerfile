@@ -1,6 +1,7 @@
 FROM mcr.microsoft.com/dotnet/sdk:9.0 AS build
 WORKDIR /src
-COPY . .
+COPY backend/ .
+COPY sql/001_schema.sql /sql/001_schema.sql
 RUN dotnet restore JobTracker.sln
 RUN dotnet publish src/JobTracker.Api/JobTracker.Api.csproj -c Release -o /app/publish --no-restore
 

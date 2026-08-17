@@ -1,0 +1,9 @@
+.git
+.github
+frontend
+docs
+**/.DS_Store
+**/bin
+**/obj
+**/.next
+**/node_modules
